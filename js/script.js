@@ -25,20 +25,31 @@ const kmPrice = 0.21;
 
 //  Recupero elementi dal DOM
 
-// Chiedo all'utente il suo nome e lo salvo
-const userName = document.getElementById('user-name').value.trim();
-console.log(userName);
+const userNameInput = document.getElementById('user-name');
+console.log(userNameInput);
 
-// Chiedo all'utente il suo cognome e lo salvo
-const userSurname = document.getElementById('user-surname').value.trim();
-console.log(userSurname);
+const userSurnameInput = document.getElementById('user-surname');
+console.log(userSurnameInput);
 
-// Chiedo all'utente quanti km vuole percorrere e li salvo 
-const userTravelDistance = parseInt(document.getElementById('user-travel-distance').value);
-console.log(userTravelDistance);
+const userTravelDistanceInput = document.getElementById('user-travel-distance');
+console.log(userTravelDistanceInput);
 
-// Chiedo all'utente la sua età e la salvo
-const userAge = parseInt(document.getElementById('user-age').value);
-console.log(userAge);
+const userAgeInput = document.getElementById('user-age');
+console.log(userAgeInput);
+
+const submitButton = document.getElementById('button-submit');
+console.log(submitButton);
+
+
+// Recupero i valori degli input al click del bottone
+
+submitButton.addEventListener('click' , function(){
+  const userName = userNameInput.value.trim();
+  const userSurname = userSurnameInput.value.trim();
+  const userTravelDistance = parseInt(userTravelDistanceInput.value);
+  const userAge = parseInt(userAgeInput.value);
+  console.log(userName , userSurname , userTravelDistance , userAge);
+  
+})
 
 
