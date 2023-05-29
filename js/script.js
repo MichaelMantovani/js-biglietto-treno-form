@@ -54,10 +54,11 @@ submitButton.addEventListener('click' , function(){
   const userSurname = userSurnameInput.value.trim();
   const userTravelDistance = parseInt(userTravelDistanceInput.value);
   const userAge = parseInt(userAgeInput.value);
+
+  console.log(typeof userName)
   
   // Controllo che i dati raccolti siano validi
-
-  if (isNaN(userTravelDistance) || isNaN(userAge) || userTravelDistance <= 0 || userAge < 0) {
+  if (userName.length < 1 || userSurname.length < 1 || isNaN(userTravelDistance) || isNaN(userAge) || userTravelDistance <= 0 || userAge < 0) {
     alert('Alcuni dati inseriti non sono validi')
   } else {
 
