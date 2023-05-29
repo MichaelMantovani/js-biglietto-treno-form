@@ -15,31 +15,52 @@
 <body>
 
   <!-- User name input -->
-  <div>
-    <label for="user-name">Nome</label>
-    <input type="text"  id="user-name" value="Michael">
-  </div>
+  <main class="bg-primary">
+    <div class="top-content p-4">
+      <h1 class="text-center c-white">Calcola il prezzo del tuo biglietto</h1>
+      <div class="container">
+        <div class="row my-5 justify-content-center border rounded bg-body p-4">
+          
+          <!-- User name input -->
+          <div class="col-2 text-center">
+            <label for="user-name">Nome</label>
+            <input class="border border-primary rounded" type="text"  id="user-name" value="Michael">
+          </div>
+        
+          <!-- User surname input -->
+          <div class="col-2 text-center">
+            <label for="user-surname">Cognome</label>
+            <input class="border border-primary rounded" type="text"  id="user-surname" value="Mantovani">
+          </div>
+        
+          <!-- User travel distance input -->
+          <div class="col-2 text-center">
+            <label for="user-travel-distance">Km da percorrere</label>
+            <input class="border border-primary rounded" type="number"  id="user-travel-distance" value="50" min="1">
+          </div>
+        
+          <!-- User age input -->
+          <div class="col-2 text-center">
+            <label for="user-age">Età</label>
+            <input class="border border-primary rounded" type="number"  id="user-age" value="24" min="1">
+          </div>
 
-  <!-- User surname input -->
-  <div>
-    <label for="user-surname">Cognome</label>
-    <input type="text"  id="user-surname" value="Mantovani">
-  </div>
+          <!-- Generate price button -->
+          <div class="col-12 text-center mt-5">
+            <button class="btn btn-primary" id="button-submit">Calcola il prezzo</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- User travel distance input -->
-  <div>
-    <label for="user-travel-distance">Km da percorrere</label>
-    <input type="number"  id="user-travel-distance" value="50" min="1">
-  </div>
 
-  <!-- User age input -->
-  <div>
-    <label for="user-age">Età</label>
-    <input type="number"  id="user-age" value="24" min="1">
-  </div>
+    
 
-  <!-- Generate price button -->
-  <button id="button-submit">Calcola prezzo</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
 
 
   <!-- Js -->
