@@ -40,6 +40,15 @@ console.log(userAgeInput);
 const submitButton = document.getElementById('button-submit');
 console.log(submitButton);
 
+const userNamePlaceholder = document.getElementById('user-name-placeholder');
+console.log(userNamePlaceholder);
+
+const ticketTypePlaceholder = document.getElementById('ticket-type-placeholder');
+console.log(ticketTypePlaceholder);
+
+const ticketPricePlaceholder = document.getElementById('ticket-price-placeholder');
+console.log(ticketPricePlaceholder);
+
 
 // Recupero i valori degli input al click del bottone
 
@@ -51,6 +60,8 @@ submitButton.addEventListener('click' , function(){
   const userAge = parseInt(userAgeInput.value);
   console.log(userName , userSurname , userTravelDistance , userAge);
 
+  userNamePlaceholder.innerText = userName + ' ' + userSurname
+
   // Calcolo il prezzo
   const travelPrice = userTravelDistance * kmPrice;
   console.log(travelPrice);
@@ -58,13 +69,18 @@ submitButton.addEventListener('click' , function(){
   
   // Applico gli sconti in base alla fascia d'età
   let discountPrice = travelPrice;
+  let ticketType = 'Biglietto Standard';
   if (userAge < adultAge) {
     discountPrice = travelPrice - (travelPrice * discountUnderage); 
+    ticketType = 'Biglietto Ridotto'
   } else if(userAge >= seniorAge){
     discountPrice = travelPrice - (travelPrice * discountSenior)
+    ticketType = 'Biglietto over65'
   }
   
   console.log(discountPrice);
+  ticketTypePlaceholder.innerText = ticketType;
+  ticketPricePlaceholder.innerText = discountPrice + '€'; 
   
 })
 
