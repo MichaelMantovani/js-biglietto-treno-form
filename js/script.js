@@ -21,41 +21,29 @@ const seniorAge= 65;
 const kmPrice = 0.21; 
 
 
-
-
 //  Recupero elementi dal DOM
 
 const userNameInput = document.getElementById('user-name');
-console.log(userNameInput);
 
 const userSurnameInput = document.getElementById('user-surname');
-console.log(userSurnameInput);
 
 const userTravelDistanceInput = document.getElementById('user-travel-distance');
-console.log(userTravelDistanceInput);
 
 const userAgeInput = document.getElementById('user-age');
-console.log(userAgeInput);
 
 const submitButton = document.getElementById('button-submit');
-console.log(submitButton);
 
 const userNamePlaceholder = document.getElementById('user-name-placeholder');
-console.log(userNamePlaceholder);
 
 const ticketTypePlaceholder = document.getElementById('ticket-type-placeholder');
-console.log(ticketTypePlaceholder);
 
 const ticketPricePlaceholder = document.getElementById('ticket-price-placeholder');
-console.log(ticketPricePlaceholder);
 
 const userWagonPlaceholder = document.getElementById('user-wagon-placeholder');
-console.log(userWagonPlaceholder)
 
 const cpCodePlaceholder = document.getElementById('cp-code-placeholder');
-console.log(cpCodePlaceholder);
 
-const ticket = document.querySelector('.bottom-content')
+const ticket = document.querySelector('.bottom-content');
 
 
 // Recupero i valori degli input al click del bottone
@@ -66,8 +54,7 @@ submitButton.addEventListener('click' , function(){
   const userSurname = userSurnameInput.value.trim();
   const userTravelDistance = parseInt(userTravelDistanceInput.value);
   const userAge = parseInt(userAgeInput.value);
-  console.log(userName , userSurname , userTravelDistance , userAge);
-
+  
   // Controllo che i dati raccolti siano validi
 
   if (isNaN(userTravelDistance) || isNaN(userAge) || userTravelDistance <= 0 || userAge < 0) {
@@ -76,7 +63,6 @@ submitButton.addEventListener('click' , function(){
 
       // Calcolo il prezzo
     const travelPrice = userTravelDistance * kmPrice;
-    console.log(travelPrice);
 
     
     // Applico gli sconti in base alla fascia d'età
@@ -90,7 +76,6 @@ submitButton.addEventListener('click' , function(){
       ticketType = 'Biglietto over65'
     }
     
-    console.log(discountPrice);
 
     // Genero casualemente un numero per la carrozza
     const wagonMin = 1;
