@@ -68,16 +68,19 @@ submitButton.addEventListener('click' , function(){
   const userAge = parseInt(userAgeInput.value);
   console.log(userName , userSurname , userTravelDistance , userAge);
 
-  // Stampo in pagina il nome e il cognome
-  userNamePlaceholder.innerText = userName + ' ' + userSurname
+  // Controllo che i dati raccolti siano validi
 
-  // Calcolo il prezzo
+  if (isNaN(userTravelDistance) || isNaN(userAge) || userTravelDistance <= 0 || userAge < 0) {
+    alert('Alcuni dati inseriti non sono validi')
+  } else {
+
+    // Calcolo il prezzo
   const travelPrice = userTravelDistance * kmPrice;
   console.log(travelPrice);
 
   
   // Applico gli sconti in base alla fascia d'età
-  let discountPrice = travelPrice;appearance
+  let discountPrice = travelPrice;
   let ticketType = 'Biglietto Standard';
   if (userAge < adultAge) {
     discountPrice = travelPrice - (travelPrice * discountUnderage); 
@@ -89,11 +92,6 @@ submitButton.addEventListener('click' , function(){
   
   console.log(discountPrice);
 
-  // Stampo in pagina il tipo di sconto e il prezzo del biglietto 
-  ticketTypePlaceholder.innerText = ticketType;
-  ticketPricePlaceholder.innerText = (discountPrice.toFixed(2)) + '€'; 
-  
-
   // Genero casualemente un numero per la carrozza
   const wagonMin = 1;
   const wagonMax = 20;
@@ -104,16 +102,24 @@ submitButton.addEventListener('click' , function(){
   const cpMin = 10000;
   const cpMax = 99999;
   const cpCode = Math.floor(Math.random() * (cpMax - cpMin + 1) + cpMin);
-  
-  
-  
-  // Stampo in pagina i numeri generati 
-  userWagonPlaceholder.innerText = userWagon;
-  cpCodePlaceholder.innerText = cpCode;
 
   // Faccio apparire il biglietto solo quando è generato
   ticket.classList.remove('d-none');
   
+   // Stampo in pagina il nome e il cognome
+   userNamePlaceholder.innerText = userName + ' ' + userSurname
+
+  // Stampo in pagina il tipo di sconto e il prezzo del biglietto 
+  ticketTypePlaceholder.innerText = ticketType;
+  ticketPricePlaceholder.innerText = (discountPrice.toFixed(2)) + '€'; 
+  
+  // Stampo in pagina i numeri generati 
+  userWagonPlaceholder.innerText = userWagon;
+  cpCodePlaceholder.innerText = cpCode;
+  
+}
+
+
 })
 
 
