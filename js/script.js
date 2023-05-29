@@ -55,6 +55,8 @@ console.log(userWagonPlaceholder)
 const cpCodePlaceholder = document.getElementById('cp-code-placeholder');
 console.log(cpCodePlaceholder);
 
+const ticket = document.querySelector('.bottom-content')
+
 
 // Recupero i valori degli input al click del bottone
 
@@ -75,7 +77,7 @@ submitButton.addEventListener('click' , function(){
 
   
   // Applico gli sconti in base alla fascia d'età
-  let discountPrice = travelPrice;
+  let discountPrice = travelPrice;appearance
   let ticketType = 'Biglietto Standard';
   if (userAge < adultAge) {
     discountPrice = travelPrice - (travelPrice * discountUnderage); 
@@ -109,7 +111,9 @@ submitButton.addEventListener('click' , function(){
   userWagonPlaceholder.innerText = userWagon;
   cpCodePlaceholder.innerText = cpCode;
 
-
+  // Faccio apparire il biglietto solo quando è generato
+  ticket.classList.remove('d-none');
+  
 })
 
 
