@@ -49,6 +49,8 @@ console.log(ticketTypePlaceholder);
 const ticketPricePlaceholder = document.getElementById('ticket-price-placeholder');
 console.log(ticketPricePlaceholder);
 
+const userWagonPlaceholder = document.getElementById('user-wagon-placeholder')
+
 
 // Recupero i valori degli input al click del bottone
 
@@ -60,6 +62,7 @@ submitButton.addEventListener('click' , function(){
   const userAge = parseInt(userAgeInput.value);
   console.log(userName , userSurname , userTravelDistance , userAge);
 
+  // Stampo in pagina il nome e il cognome
   userNamePlaceholder.innerText = userName + ' ' + userSurname
 
   // Calcolo il prezzo
@@ -79,9 +82,18 @@ submitButton.addEventListener('click' , function(){
   }
   
   console.log(discountPrice);
+
+  // Stampo in pagina il tipo di sconto e il prezzo del biglietto 
   ticketTypePlaceholder.innerText = ticketType;
   ticketPricePlaceholder.innerText = discountPrice + '€'; 
   
+
+  // Genero casualemente un numero per la carrozza
+  const min = 1;
+  const max = 20;
+  const userWagon = Math.floor(Math.random() * (max - min + 1) + min);
+  console.log(userWagon);
+  userWagonPlaceholder.innerText = userWagon;
 })
 
 
