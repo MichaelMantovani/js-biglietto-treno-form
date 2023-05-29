@@ -43,7 +43,7 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 - Modifico il file HTML creando gli input e il button
 - Elimino i prompt
 - Recupero gli elementi dal Dom
-- Recupero i valore degli input
+- Recupero i valore degli input al click del bottone
 - Verifico che i valori dell'input siano validi
 - Calcolo il prezzo
 - Applico gli sconti
