@@ -51,3 +51,11 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 
 <br>
 <br>
+
+**MILESTONE 2**
+
+- Genero casualemente un numero per la carrozza
+- Genero casualemente un codice per il biglietto
+- Applico dello stile al form
+- Stampo il biglietto con tutti i dati in pagina
+- Applico dello stile al biglietto in pagina
