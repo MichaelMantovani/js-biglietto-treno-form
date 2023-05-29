@@ -49,7 +49,11 @@ console.log(ticketTypePlaceholder);
 const ticketPricePlaceholder = document.getElementById('ticket-price-placeholder');
 console.log(ticketPricePlaceholder);
 
-const userWagonPlaceholder = document.getElementById('user-wagon-placeholder')
+const userWagonPlaceholder = document.getElementById('user-wagon-placeholder');
+console.log(userWagonPlaceholder)
+
+const cpCodePlaceholder = document.getElementById('cp-code-placeholder');
+console.log(cpCodePlaceholder);
 
 
 // Recupero i valori degli input al click del bottone
@@ -89,11 +93,23 @@ submitButton.addEventListener('click' , function(){
   
 
   // Genero casualemente un numero per la carrozza
-  const min = 1;
-  const max = 20;
-  const userWagon = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(userWagon);
+  const wagonMin = 1;
+  const wagonMax = 20;
+  const userWagon = Math.floor(Math.random() * (wagonMax - wagonMin + 1) + wagonMin);
+  
+
+  // Genero casualemente un codice per il biglietto
+  const cpMin = 10000;
+  const cpMax = 99999;
+  const cpCode = Math.floor(Math.random() * (cpMax - cpMin + 1) + cpMin);
+  
+  
+  
+  // Stampo in pagina i numeri generati 
   userWagonPlaceholder.innerText = userWagon;
+  cpCodePlaceholder.innerText = cpCode;
+
+
 })
 
 
