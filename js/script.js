@@ -8,10 +8,10 @@ console.log('JS OK')
 /* Stabilisco tariffe di prezzo e sconti per età */
 
 // Percentuale di sconto per minorenni
-const discountUnderage = 20;
+const discountUnderage = 0.2;
 
 // Percentuale di sconto per over65
-const discountSenior = 40;
+const discountSenior = 0.4;
 
 // Soglie di età
 const adultAge = 18;
@@ -44,12 +44,32 @@ console.log(submitButton);
 // Recupero i valori degli input al click del bottone
 
 submitButton.addEventListener('click' , function(){
+  
   const userName = userNameInput.value.trim();
   const userSurname = userSurnameInput.value.trim();
   const userTravelDistance = parseInt(userTravelDistanceInput.value);
   const userAge = parseInt(userAgeInput.value);
   console.log(userName , userSurname , userTravelDistance , userAge);
+
+  // Calcolo il prezzo
+  const travelPrice = userTravelDistance * kmPrice;
+  console.log(travelPrice);
+
+  
+  // Applico gli sconti in base alla fascia d'età
+  let discountPrice = travelPrice;
+  if (userAge < adultAge) {
+    discountPrice = travelPrice - (travelPrice * discountUnderage); 
+  } else if(userAge >= seniorAge){
+    discountPrice = travelPrice - (travelPrice * discountSenior)
+  }
+  
+  console.log(discountPrice);
   
 })
+
+
+
+
 
 
