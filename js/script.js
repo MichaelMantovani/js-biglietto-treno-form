@@ -89,7 +89,7 @@ submitButton.addEventListener('click' , function(){
 
   // Stampo in pagina il tipo di sconto e il prezzo del biglietto 
   ticketTypePlaceholder.innerText = ticketType;
-  ticketPricePlaceholder.innerText = discountPrice + '€'; 
+  ticketPricePlaceholder.innerText = (discountPrice.toFixed(2)) + '€'; 
   
 
   // Genero casualemente un numero per la carrozza
