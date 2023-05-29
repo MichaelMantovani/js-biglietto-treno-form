@@ -10,6 +10,9 @@
 - va applicato uno sconto del 20% per i minorenni
 - va applicato uno sconto del 40% per gli over 65.
 
+<br>
+<br>
+
 **MILESTONE 1**:
 Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anch’essa da scrivere in console.
 
@@ -24,38 +27,27 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 <br>
 <br>
 
-**Svolgimento traccia**
+**SVOLGIMENTO DELLA TRACCIA E DELLE MILESTONE**
 
 - Recupero l'elemento dal DOM
-- Stabilisco tariffe di prezzo e sconti per età
-- Chiedo all'utente il numero di km che vuole percorrere e salvo la risposta
-- Chiedo all'utente la sua età e salvo la risposta
-- Controllo che le risposte siano corrette (bonus)
-- Calcolo il costo del viaggio
-- Applico gli sconti in base all'età
-- Stampo in console il risultato
-
-<br>
-<br>
-
-**MILESTONE 1**
-
-- Modifico il file HTML creando gli input e il button
-- Elimino i prompt
-- Recupero gli elementi dal Dom
-- Recupero i valore degli input al click del bottone
-- Verifico che i valori dell'input siano validi
-- Calcolo il prezzo
-- Applico gli sconti
-- Stampo il risultato in console
-
-<br>
-<br>
-
-**MILESTONE 2**
-
-- Applico dello stile al form
-- Genero casualemente un numero per la carrozza
-- Genero casualemente un codice per il biglietto
-- Stampo il biglietto con tutti i dati in pagina
-- Applico dello stile al biglietto in pagina
+- Aggiungo un event listener al button di submit
+- **QUANDO** l'utente clicca sul bottone di submit
+  - Raccolgo i dati dagli input
+  - Effettuo il controllo dei dati
+    **SE** manca il nome
+    **OPPURE** il cognome
+    **OPPURE** l'età è inferiore a zero o non è un numero
+    **OPPURE** i km del viaggio non sono un numero o sono meno di zero 
+      - Aggiungo un alert
+    **FINE.**
+    **ALTRIMENTI** 
+    - Calcolo il prezzo del biglietto
+      **SE** l'utente è minorenne 
+        - Applico uno sconto del 20%
+      **SE INVECE** è over 65 
+        - Applico uno sconto del 40%
+  - Randomizzo il numero della carrozza
+  - Randomizzo il numero del CP Code
+  - Inserisco i dati negli elementi del DOM recuperati
+  - Faccio apparire il biglietto con tutti i dati
+    **FINE**
